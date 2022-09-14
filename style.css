@@ -1,0 +1,113 @@
+body {
+    background-image: url("Night_time_Scenery_with_a_lot_of_stars.png");
+    background-attachment: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+h1 {
+    margin: 0;
+    padding-top: 15;
+}
+ul {
+    padding-left: 15;
+}
+a {
+    max-width: max-content;
+    max-height: max-content;
+    color: black;
+    text-decoration-line: none;
+    /* display: block; */
+}
+a:hover {
+    background-color: rgb(146, 212, 243);
+    /* display: block; */
+}
+.body {
+    padding-right: 300;
+    padding-left: 50;
+}
+.header {
+    margin: 0px;
+    padding: 5px;
+    background-color: rgb(159, 248, 156);
+}
+.title {
+    background-image: url("Night_time_Scenery_with_a_lot_of_stars.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    text-align: center;
+}
+.main_body {
+    background-color: rgb(217, 250, 255);
+    padding-left: 20;
+    padding-bottom: 5;
+}
+.top_body {
+    /* flex-direction: row; */
+    display: flex;
+    margin-right: 50;
+}
+.mid_body {
+    /* display: flex; */
+    margin-right: 50;
+}
+.introduction {
+    width: 750;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.referenceTable {
+    align-content:flex-start;
+    border: 2px solid black;
+}
+.Contents {
+    border-bottom: 2px solid black;
+    padding-left: 20;
+    padding-top: 5;
+    padding-bottom: 5;
+    font-size: 20;
+}
+.referencedContents {
+    padding-left: 0;
+}
+.biograph {
+    align-content:flex-start;
+    background-color: white;
+    margin-right: 10;
+    margin-left: 10;
+    margin-top: 25;
+    border: 5px solid white;
+}
+#profile {
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 30;
+}
+#myPicture {
+    margin-left: 45;
+    margin-right: 45;
+    margin-top: 20;
+    margin-bottom: 20;
+}
+#evenRow {
+    background-color:rgba(236, 244, 245, 0.795);
+}
+.Quote {
+    font-size: 30px;
+}
+.ShortLine {
+    width: 50%;
+    float: left;
+}
+ul { 
+    counter-reset: item;
+}
+li { 
+    display: block;
+    margin: 5;
+}
+li:before { 
+    content: counters(item, ".") ". "; counter-increment: item; 
+}
