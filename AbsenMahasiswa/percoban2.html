@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Import CVS </title>
+        <script src="upload.js"></script>
+        <script src="saveAbsen.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <input type="file" id="fileUpload" accept=".csv">
+        <button id="uploadConfirm">Upload File</button>
+        <a href="percoban1.html">Buat Daftar Siswa</a>
+        <hr width="100%" />
+        <table id="body" border="1">
+            <tbody>
+                <tr>
+                    <th >No</th>
+                    <th >NIM</th>
+                    <th id="namaMahasiswa" >Nama&nbspMahasiswa&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                    <th >Pertemuan 1</th>
+                    <th >Pertemuan 2</th>
+                    <th >Pertemuan 3</th>
+                    <th >Pertemuan 4</th>
+                    <th >Pertemuan 5</th>
+                    <th >Pertemuan 6</th>
+                    <th >Pertemuan 7</th>
+                    <th >Pertemuan 8</th>
+                    <th >Pertemuan 9</th>
+                    <th >Pertemuan 10</th>
+                    <th >Pertemuan 11</th>
+                    <th >Pertemuan 12</th>
+                    <th >Pertemuan 13</th>
+                    <th >Pertemuan 14</th>
+                    <th >Pertemuan 15</th>
+                    <th >Pertemuan 16</th>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="saveAbsen()">Simpan</button>
+
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
+        <script>
+            const uploadConfirm = document.getElementById("uploadConfirm").
+                addEventListener('click', () => {
+                Papa.parse(document.getElementById('fileUpload').files[0],
+                {
+                    download: true,
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results){
+                        var myTableDiv = document.getElementById("body");
+                        var length = myTableDiv.children.length;
+                        
+                            for (let index = 3; index < myTableDiv.childNodes.length;) {
+                                myTableDiv.removeChild(myTableDiv.childNodes[index])
+                            }
+
+                            for (let index = 0; index < results.data.length; index++) {
+                                var replacer = document.createElement("tbody");
+                                var table = document.createElement('TR');
+                                table.border = '1';
+                                
+                                var td = document.createElement('TD');
+                                td.appendChild(document.createTextNode(results.data[index].No));
+                                table.appendChild(td);
+                                var td = document.createElement('TD');
+                                td.appendChild(document.createTextNode(results.data[index].NIM));
+                                table.appendChild(td);
+                                var td = document.createElement('TD');
+                                td.id = "namaMahasiswa"
+                                td.appendChild(document.createTextNode(results.data[index].Nama));
+                                table.appendChild(td);
+
+                                for (let i = 0; i < 16; i++) {
+                                    var td = document.createElement('TD');
+                                    var inputKehadiran = document.createElement("input");
+                                    inputKehadiran.type = "checkbox";
+                                    inputKehadiran.classList.add("absen");
+                                    inputKehadiran.name = "hadir";
+                                    inputKehadiran.value = "hadir";
+                                    if (results.data[index].__parsed_extra[i] == "hadir") {
+                                        inputKehadiran.checked = "true";
+                                    } else {
+
+                                    }
+                                    td.appendChild(inputKehadiran);
+                                    table.appendChild(td);
+                                }
+                                myTableDiv.append(table);
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

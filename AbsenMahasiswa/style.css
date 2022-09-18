@@ -1,0 +1,56 @@
+body {
+    max-width: 3000;
+    overflow-y: auto;
+}
+button {
+    height: 50;
+    width: 300;
+    margin: 10;
+}
+#collumNumbers {
+    display: none;
+    size: 200;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 1;
+}
+th, td{
+    font-weight: unset;
+    padding: 10px 20px;
+    border: 1px solid #000;
+}
+#body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    /* width: 100%; */
+}
+
+#body td, #body th {
+    border: 1px solid #ddd;
+}
+
+#body tr:nth-child(even){background-color: #f2f2f2;}
+
+#body tr:hover {background-color: #ddd;}
+
+#body th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 90;
+    text-align: left;
+    background-color: #294c67;;
+    color: white;
+}
+#checkbox {
+    padding: 0;
+}
+#absen {
+    width: 100%;
+    margin: 0;
+    height: 25;
+}
+#namaMahasiswa {
+    max-width: 300;
+    width: 150;
+}
