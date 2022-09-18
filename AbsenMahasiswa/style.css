@@ -1,11 +1,7 @@
 body {
+    margin: 0;
     max-width: 3000;
     overflow-y: auto;
-}
-button {
-    height: 50;
-    width: 300;
-    margin: 10;
 }
 #collumNumbers {
     display: none;
@@ -23,7 +19,7 @@ th, td{
 #body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    /* width: 100%; */
+    width: 100%;
 }
 
 #body td, #body th {
@@ -37,7 +33,6 @@ th, td{
 #body th {
     padding-top: 12px;
     padding-bottom: 12px;
-    width: 90;
     text-align: left;
     background-color: #294c67;;
     color: white;
@@ -50,6 +45,7 @@ th, td{
     margin: 0;
     height: 25;
 }
+
 #namaMahasiswa {
     max-width: 300;
     width: 150;

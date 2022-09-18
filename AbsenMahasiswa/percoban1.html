@@ -3,32 +3,47 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Document</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="body.css">
+        <link rel="stylesheet" href="style.css">
         <script src="addTable.js"></script>
         <script src="saveTable.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <script src="slidebar.js"></script>
+        
     </head>
     <body>
-        <label>
-            <input type="text" id="nim" placeholder="NIM Mahasiswa..." name="nim">
-            <input type="text" id="nama" placeholder="Nama Mahasiswa..." name="nama">
-        </label>
-        <div>
-            <table id="body" border="1">
-                <tbody>
-                    <tr>
-                        <th width="20">No</th>
-                        <th width="100">NIM</th>
-                        <th width="150">Nama Mahasiswa</th>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="percoban1.html" class="w3-bar-item w3-button">Buat Daftar Mahasiswa</a>
+            <a href="percoban2.html" class="w3-bar-item w3-button">Absensi Mahasiswa</a>
         </div>
-        <button type="button" onclick="addTable()">Tambah Mahasiswa</button> <br>
-        <input type="text" id="namaFile" placeholder="Nama File.." nama="namaFile"> <br>
-        <button type="button" onclick="saveTable()">Simpan Mahasiswa</button>
-        <a href="percoban2.html">Absensi Mahasiswa</a>
-        <div id="collumNumbers">0</div>
+
+        <div class="PageContent">
+            <div class="header">
+                <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+            </div>
+            <div class="body">
+                <label>
+                    <input type="text" id="nim" placeholder="NIM Mahasiswa..." name="nim">
+                    <input type="text" id="nama" placeholder="Nama Mahasiswa..." name="nama">
+                    <button type="button" onclick="addTable()">Tambah Mahasiswa</button> <br>
+                </label> 
+                <table id="body" border="1">
+                    <tbody>
+                        <tr>
+                            <th width="20">No</th>
+                            <th width="100">NIM</th>
+                            <th width="150">Nama Mahasiswa</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="text" id="namaFile" placeholder="Nama File.." nama="namaFile"> <br>
+                <button type="button" onclick="saveTable()">Simpan Mahasiswa</button>
+                <div id="collumNumbers">0</div>
+            </div>
+
+        </div>
     </body>
 </html>

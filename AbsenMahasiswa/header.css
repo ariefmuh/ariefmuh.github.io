@@ -1,0 +1,13 @@
+.header {
+    margin: 0px;
+    background-color: teal;
+    /* background-color: rgb(159, 248, 156); */
+}
+.Login {
+    float: right;
+    font-size: 20;
+}
+.SignUp {
+    float: right;
+    font-size: 20;
+}

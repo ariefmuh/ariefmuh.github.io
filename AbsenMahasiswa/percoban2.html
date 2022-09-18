@@ -4,43 +4,60 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Import CVS </title>
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
         <script src="upload.js"></script>
         <script src="saveAbsen.js"></script>
+        <script src="slidebar.js"></script>
+        <link rel="stylesheet" href="body.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
-        <input type="file" id="fileUpload" accept=".csv">
-        <button id="uploadConfirm">Upload File</button>
-        <a href="percoban1.html">Buat Daftar Siswa</a>
-        <hr width="100%" />
-        <table id="body" border="1">
-            <tbody>
-                <tr>
-                    <th >No</th>
-                    <th >NIM</th>
-                    <th id="namaMahasiswa" >Nama&nbspMahasiswa&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-                    <th >Pertemuan 1</th>
-                    <th >Pertemuan 2</th>
-                    <th >Pertemuan 3</th>
-                    <th >Pertemuan 4</th>
-                    <th >Pertemuan 5</th>
-                    <th >Pertemuan 6</th>
-                    <th >Pertemuan 7</th>
-                    <th >Pertemuan 8</th>
-                    <th >Pertemuan 9</th>
-                    <th >Pertemuan 10</th>
-                    <th >Pertemuan 11</th>
-                    <th >Pertemuan 12</th>
-                    <th >Pertemuan 13</th>
-                    <th >Pertemuan 14</th>
-                    <th >Pertemuan 15</th>
-                    <th >Pertemuan 16</th>
-                </tr>
-            </tbody>
-        </table>
-        <button type="button" onclick="saveAbsen()">Simpan</button>
+        <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a href="percoban1.html" class="w3-bar-item w3-button">Buat Daftar Mahasiswa</a>
+            <a href="percoban2.html" class="w3-bar-item w3-button">Absensi Mahasiswa</a>
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.1/papaparse.min.js"></script>
+        <div class="PageContent">
+            <div class="header">
+                <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+            </div>
+            <div class="body">
+                <input type="file" id="fileUpload" accept=".csv">
+                <button id="uploadConfirm">Upload File</button>
+                <!-- <hr/> -->
+                <table id="body" border="1">
+                    <tbody>
+                        <tr>
+                            <th >No</th>
+                            <th >NIM</th>
+                            <th id="namaMahasiswa" >Nama&nbspMahasiswa&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+                            <th >Pertemuan 1</th>
+                            <th >Pertemuan 2</th>
+                            <th >Pertemuan 3</th>
+                            <th >Pertemuan 4</th>
+                            <th >Pertemuan 5</th>
+                            <th >Pertemuan 6</th>
+                            <th >Pertemuan 7</th>
+                            <th >Pertemuan 8</th>
+                            <th >Pertemuan 9</th>
+                            <th >Pertemuan 10</th>
+                            <th >Pertemuan 11</th>
+                            <th >Pertemuan 12</th>
+                            <th >Pertemuan 13</th>
+                            <th >Pertemuan 14</th>
+                            <th >Pertemuan 15</th>
+                            <th >Pertemuan 16</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="saveAbsen()">Simpan</button>
+            </div>
+        </div>
+
+
         <script>
             const uploadConfirm = document.getElementById("uploadConfirm").
                 addEventListener('click', () => {

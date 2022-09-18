@@ -1,0 +1,10 @@
+.body {
+    background-color: #f2f2f2;
+    width: 100%;
+}
+.body hr {
+    width: 100%;
+}
+.body button, .body input {
+    margin: 10px;
+}
