@@ -1,0 +1,23 @@
+.container {
+    text-align: center;
+}
+.container .row .col li{
+    text-align: center;
+}
+#monsterList {
+    margin-right: 0px;
+    margin-left: 0;
+    background-color: grey;
+}
+#activity {
+    margin: 5px;
+}
+.forum-pertanyaan div{
+    margin: 10px;
+}
+.container .row .py-4 p{
+    color: white;
+}
+.container .py-5 .row h5{
+    color: white;
+}
